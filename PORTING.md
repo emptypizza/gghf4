@@ -20,7 +20,8 @@ Assets/Mental/
 │  ├─ Core/   CourtData(모델·판정 순수함수) · GameConfig(SO) · Loc · UiKit · SfxSynth · DialogueBox · GameRoot
 │  ├─ Court/  CourtEngine (상태머신: title→open→hearing→verdict→ending / mistrial)
 │  ├─ Hub/    HubScreen (언어 게이트 + CASE 3·4 선택)
-│  └─ Editor/ MentalBootstrap · AndroidBuild · WebGLBuild
+│  ├─ QA/     PlayRouteDriver (Play 모드 자동 주행, 에디터 전용)
+│  └─ Editor/ MentalBootstrap · AndroidBuild · WebGLBuild · PlayRouteValidator
 └─ Scenes/Main.unity            ← 부트스트랩이 생성
 ```
 
@@ -28,14 +29,14 @@ Assets/Mental/
 
 ## 실행 (에디터)
 
-1. 유니티로 `gghf4` 열기 (6000.5.3f1)
+1. 유니티로 `gghf4` 열기 (6000.5.5f1)
 2. 메뉴 **Mental → Setup Main Scene (씬 생성)** — 씬·설정 에셋 자동 구성
 3. Play → 언어 선택 → 허브 → CASE 3 / CASE 4
 
 ## 실행 (unitycli / 커맨드라인 — 표준 유니티 배치 기준)
 
 ```bash
-UNITY=/Applications/Unity/Hub/Editor/6000.5.3f1/Unity.app/Contents/MacOS/Unity
+UNITY=/Applications/Unity/Hub/Editor/6000.5.5f1/Unity.app/Contents/MacOS/Unity
 PROJ=~/gghf4
 
 # 1) 컴파일 게이트 — 에러 있으면 exit != 0
@@ -111,7 +112,7 @@ unity-cli-bridge 는 `Packages/com.yhc509.unity-cli-bridge` 에 **embedded + 로
 
 ```bash
 MENTAL_APK_OUT=$PROJ/Builds/Mental.apk \
-JAVA_HOME=/Applications/Unity/Hub/Editor/6000.5.3f1/PlaybackEngines/AndroidPlayer/OpenJDK \
+JAVA_HOME=/Applications/Unity/Hub/Editor/6000.5.5f1/PlaybackEngines/AndroidPlayer/OpenJDK \
 "$UNITY" -projectPath "$PROJ" -batchmode -logFile - \
   -buildTarget Android -executeMethod Mental.AndroidBuild.BatchBuild   # 종료코드 0=성공
 ```
