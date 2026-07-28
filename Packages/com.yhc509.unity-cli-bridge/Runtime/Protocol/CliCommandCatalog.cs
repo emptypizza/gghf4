@@ -447,7 +447,8 @@ namespace UnityCli.Protocol
                 canUseLocal: false,
                 canUseLive: true,
                 isAllowedWhileBusy: false,
-                notes: new[] { "Use this instead of asset create --type prefab for structured prefab authoring.", "Detailed prefab patch rules live in docs/prefab-spec.md." }),
+                notes: new[] { "Use this instead of asset create --type prefab for structured prefab authoring.", "Detailed prefab patch rules live in docs/prefab-spec.md." },
+                forceRule: ForceRule.OnOverwrite),
             new CliCommandDescriptor(
                 "prefab patch",
                 "prefab patch --path <Assets/...> (--spec-file <file.json> | --spec-json <json>) [--force]",
@@ -528,6 +529,20 @@ namespace UnityCli.Protocol
                 canUseLive: true,
                 isAllowedWhileBusy: true,
                 notes: new[] { "Reads from Library/com.yhc509.unity-cli-bridge/test-runs/<runId>.json or in-memory SessionState." }),
+            new CliCommandDescriptor(
+                "test cancel",
+                "test cancel",
+                "Cancels the in-progress test run and releases the run lock; a no-op success when no run is active.",
+                CliCommandGroup.Diagnostics,
+                ProtocolConstants.CommandTestCancel,
+                canUseLocal: false,
+                canUseLive: true,
+                isAllowedWhileBusy: true,
+                notes: new[]
+                {
+                    "Attempts a graceful TestRunnerApi cancel first, then always releases the run lock even if the graceful cancel fails.",
+                    "Manual escape hatch for a stuck test-run lock; prefer this over reflecting into internal APIs.",
+                }),
             new CliCommandDescriptor(
                 "package list",
                 "package list [--filter <substring>] [--limit N]",

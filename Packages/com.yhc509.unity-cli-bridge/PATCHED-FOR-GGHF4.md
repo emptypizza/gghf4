@@ -1,8 +1,8 @@
 # 로컬 패치 노트 (embedded 전환 사유)
 
-원본: https://github.com/yhc509/unity-cli-bridge `v0.4.1`
-(`unity-package/com.yhc509.unity-cli-bridge`, CLI 프로토콜 5 / unity-cli 0.4.1 과 페어)
-v0.4.0 → v0.4.1 업그레이드: 2026-07-15 (아래 2개 패치 재적용).
+원본: https://github.com/yhc509/unity-cli-bridge `v0.4.3`
+(`unity-package/com.yhc509.unity-cli-bridge`, CLI 프로토콜 5 / unity-cli 0.4.3 과 페어)
+v0.4.0 → v0.4.1 업그레이드: 2026-07-15, v0.4.1 → v0.4.3 업그레이드: 2026-07-28 (아래 2개 패치 재적용).
 
 git URL 참조 대신 embedded 로 전환하고 아래 2가지를 패치했다.
 `com.unity.purchasing` 5.4.1 과의 공존 문제 — 업스트림에 이슈로 올릴 만한 내용.
@@ -21,7 +21,7 @@ Unity Newtonsoft 포크 정합은 여전히 안전한 구성이라 패치를 유
    업스트림 GUID `a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6` (수제 placeholder)가
    `com.unity.purchasing/Runtime/Stores/Android/GooglePlay/AndroidDeviceInfoBuilder.cs`
    의 GUID 와 정면 충돌 → 한쪽 에셋이 무시됐다.
-   → `eec5b5ffa2044ba69134c758a75b61a7` 로 교체. (v0.4.1 업스트림도 여전히 placeholder — 재적용함)
+   → `eec5b5ffa2044ba69134c758a75b61a7` 로 교체. (v0.4.3 업스트림도 여전히 placeholder — 재적용함)
 
 업그레이드 시: 새 버전을 다시 embedded 로 받고 위 2개 패치를 재적용할 것.
 CLI 바이너리와 패키지 버전은 반드시 함께 올릴 것(프로토콜 정합).

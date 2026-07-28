@@ -6,6 +6,32 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.4.3] - 2026-07-21
+
+### Security
+- Installing the CLI from **Window > Unity CLI Manager** now refuses an archive that contains a symbolic link, and only downloads from this project's own release location. Extraction already rejected entries that tried to escape the staging folder, but an archive could still ship a link that the install step followed — copying whatever it pointed at, anywhere the Editor could read, into the install directory. Real releases contain a plain executable, so normal installs are unaffected.
+
+### Added
+- `test cancel` releases a stuck test run. A PlayMode run that never finished left the run lock held, and every later `test run` was refused with `TEST_RUN_IN_PROGRESS` until the Editor was restarted — the only way out was calling an internal method through `execute`. `test cancel` now stops the run, releases the lock, and reports the run id it cancelled; with nothing running it is a success, not an error. The cancelled run is recorded with status `Cancelled` and stays readable through `test results`.
+
+### Fixed
+- A client that connects to the bridge and then goes quiet no longer ties up the Editor. Such a connection previously kept its handler and socket alive for the rest of the session, so a crashed or wedged client left something behind every time; the Editor now reclaims it after 30 seconds. A single request is also capped at 32 MB, so a malformed sender can no longer make the Editor buffer without limit. Normal commands are unaffected — the deadline covers only the arrival of the request, never how long the command itself runs.
+- `status` and `doctor` no longer report "no live instance" while a reachable Editor is registered. When the pinned instance was unreachable but its process was still alive, both commands stopped at that one target. They now fall back to another registered instance and mark the answer with `failedOverFrom` so it is clear which instance replied. Routing for every other command is unchanged: if the pinned instance is unreachable, commands that modify a project still fail rather than silently retargeting a different one.
+
+## [0.4.2] - 2026-07-20
+
+### Fixed
+- `execute --timeout` above 30 seconds now works. The connection timeout stayed at 30 seconds regardless of `--timeout`, so a longer run was cut off by the CLI at 30 seconds and reported as a connection timeout instead of running to the deadline you asked for.
+- `execute` now fails when your code throws. Previously an uncaught exception in `execute` code still returned a success response and exit code 0, so scripts and CI could mistake a failed run for a successful one. Such a run now returns an error with exit code 1 and the exception message.
+- `instances use` now updates the instance registry atomically. Previously it read, changed, and rewrote the registry in separate steps, so an Editor heartbeat or another CLI command running at the same moment could be silently overwritten, leaving stale or lost instance data.
+- A malformed `--json` or `--spec-json` payload now reports a usage error with exit code 2 instead of an internal-looking error with exit code 1. Payloads whose root is not an object, whose `command` is missing or not a non-empty string, or whose `arguments` is neither an object nor null are rejected up front, as are non-object `--spec-json` roots and step entries for `scene patch`, `prefab patch`, and `qa run-sequence`. Callers can now tell bad input apart from a bridge failure.
+- The command reference now lists `prefab create` as requiring `--force` to overwrite an existing prefab. The command already refused to overwrite without it; only the documented rule was wrong.
+- The README example for `scene add-object` now includes the required `--path`. Copying the old example gave a usage error.
+- Running `dotnet test` no longer requires the .NET 9 runtime specifically — a newer runtime works. This only affects people building this repo from source.
+
+### Security
+- `test results --run-id` and `record status --recording-id` now require the 32-hex-digit form that `test run` and `record start` return. Both values went into a file path unchecked, so a caller on the local bridge could use path traversal in them to read `.json` files outside the intended directory.
+
 ## [0.4.1] - 2026-07-15
 
 ### Added
