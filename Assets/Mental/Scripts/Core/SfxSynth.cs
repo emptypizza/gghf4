@@ -53,14 +53,18 @@ namespace Mental
 
         // WebGL: 브라우저 AudioContext 는 유저 제스처 전까지 suspend.
         // 무음 클립 PlayOneShot 으로 resume (언어 게이트/케이스 시작 클릭에서 호출).
+        // 언락용 AudioSource 는 반드시 별도 GO 에 둔다 — 이 GO 에는 OnAudioFilterRead 가
+        // AudioListener 에 바인딩돼 있어, 같은 GO 에 AudioSource 를 추가하면
+        // "multiple AudioSources/AudioListeners" 경고와 함께 필터 바인딩이 깨진다.
         public void UnlockAudio()
         {
             if (_unlocked) return;
             _unlocked = true;
             if (_unlockSrc == null)
             {
-                _unlockSrc = gameObject.GetComponent<AudioSource>();
-                if (_unlockSrc == null) _unlockSrc = gameObject.AddComponent<AudioSource>();
+                var go = new GameObject("SfxUnlock");
+                go.transform.SetParent(transform, false);
+                _unlockSrc = go.AddComponent<AudioSource>();
                 _unlockSrc.playOnAwake = false;
                 _unlockSrc.spatialBlend = 0f;
             }
