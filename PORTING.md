@@ -60,9 +60,10 @@ MENTAL_ROUTE=win MENTAL_QA_OUT=/tmp/win.json \
   -executeMethod Mental.PlayRouteValidator.Run     # -quit 붙이지 말 것
 
 # B) unity-cli-bridge 상주 에디터 (에디터 재부팅 없이 반복; 헤디드 필수 — 브리지는 batchmode 미기동)
-unity-cli execute --code "Mental.PlayRouteValidator.Prepare(\"win\", \"/tmp/win.json\");" --force
-unity-cli play        # 완주하면 드라이버가 Play 를 스스로 멈추고 결과 JSON 을 남긴다
-unity-cli read-console --type error
+# 인스턴스 레지스트리를 gghf2/4/5 가 공유하므로 --project 를 빼면 다른 프로젝트 에디터로 명령이 갈 수 있다.
+unity-cli execute --project "$PROJ" --code "Mental.PlayRouteValidator.Prepare(\"win\", \"/tmp/win.json\");" --force
+unity-cli play --project "$PROJ"   # 완주하면 드라이버가 Play 를 스스로 멈추고 결과 JSON 을 남긴다
+unity-cli read-console --project "$PROJ" --type error
 ```
 
 루트: `win`(CASE 3 승리 전 구간) / `lose`(무관 증거 반복 → 재판 무효) /
@@ -118,8 +119,10 @@ JAVA_HOME=/Applications/Unity/Hub/Editor/6000.5.5f1/PlaybackEngines/AndroidPlaye
 ```
 
 빌드 트러블슈팅 (2026-07-14 실측):
-- **JDK not found / JAVA_HOME invalid** — EditorPrefs `Jdk17Path`가 삭제된 구버전 에디터(6000.5.2f1)를
-  가리키고 있었음. `defaults write com.unity3d.UnityEditor5.x Jdk17Path -string ".../6000.5.3f1/.../OpenJDK"` 로 수정.
+- **JDK not found / JAVA_HOME invalid** — EditorPrefs `Jdk17Path`가 삭제된 구버전 에디터를 가리키고 있었음
+  (2026-07-14 당시 6000.5.2f1). 지금 값을 `defaults read com.unity3d.UnityEditor5.x Jdk17Path` 로 확인하고,
+  **현재 설치된 에디터**의 경로로 고쳐 쓸 것 — 아래 명령의 버전을 그대로 복사하지 말고 설치본에 맞출 것:
+  `defaults write com.unity3d.UnityEditor5.x Jdk17Path -string "/Applications/Unity/Hub/Editor/6000.5.5f1/PlaybackEngines/AndroidPlayer/OpenJDK"`
 - **Gradle checkReleaseDuplicateClasses (kotlin-stdlib 충돌)** — 미사용 `com.unity.purchasing` 패키지가
   구버전 kotlin-stdlib-jdk7/8(1.6.21)을 끌어와 발생. manifest.json 에서 제거로 해결.
 - SDK/NDK 는 `~/Library/Android/sdk` (NDK 27.2) 사용, JDK 는 에디터 임베디드 OpenJDK.
