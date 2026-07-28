@@ -2,6 +2,8 @@
 // Mental — 절차 오디오 신스 (원본 case3.html 의 WebAudio Audio 모듈 포팅)
 // 저작권 음원 없음: 효과음·스코어 전부 실시간 합성.
 // AudioListener 가 있는 GO 에 붙는다 (OnAudioFilterRead 스트림 합성).
+// 이 GO 에는 AudioSource 를 붙이지 말 것 — OnAudioFilterRead 는 Listener 와 Source 중
+// 하나에만 바인딩되므로, 같이 있으면 Unity 가 거부하고 절차 오디오가 통째로 죽는다.
 // ============================================================
 using System.Collections.Generic;
 using UnityEngine;
@@ -51,6 +53,16 @@ namespace Mental
             _sampleRate = AudioSettings.outputSampleRate;
         }
 
+        void OnEnable() { AudioSettings.OnAudioConfigurationChanged += OnAudioConfigChanged; }
+        void OnDisable() { AudioSettings.OnAudioConfigurationChanged -= OnAudioConfigChanged; }
+
+        // 헤드셋 연결·라우트 변경(모바일)이나 WebGL AudioContext resume 으로 출력 레이트가 바뀐다.
+        // 갱신하지 않으면 이후 모든 음이 어긋난 레이트로 합성돼 피치·템포가 틀어진 채 남는다.
+        void OnAudioConfigChanged(bool deviceWasChanged)
+        {
+            lock (_lock) { _sampleRate = AudioSettings.outputSampleRate; }
+        }
+
         // WebGL: 브라우저 AudioContext 는 유저 제스처 전까지 suspend.
         // 무음 클립 PlayOneShot 으로 resume (언어 게이트/케이스 시작 클릭에서 호출).
         // 언락용 AudioSource 는 반드시 별도 GO 에 둔다 — 이 GO 에는 OnAudioFilterRead 가
@@ -59,7 +71,6 @@ namespace Mental
         public void UnlockAudio()
         {
             if (_unlocked) return;
-            _unlocked = true;
             if (_unlockSrc == null)
             {
                 var go = new GameObject("SfxUnlock");
@@ -69,8 +80,8 @@ namespace Mental
                 _unlockSrc.spatialBlend = 0f;
             }
             AudioClip clip = AudioClip.Create("mental_unlock", 256, 1, 22050, false);
-            clip.SetData(new float[256], 0);
             _unlockSrc.PlayOneShot(clip, 0.001f);
+            _unlocked = true;   // 성공한 뒤에 세운다 — 중간에 실패하면 다음 제스처에서 재시도
         }
 
         // ---------------- 스코어(무드 BGM) ----------------
@@ -88,24 +99,40 @@ namespace Mental
 
         public void StartScore() { lock (_lock) { _scoreOn = true; if (_nextStepSample < _sample) _nextStepSample = _sample; } }
         public void StopScore() { lock (_lock) { _scoreOn = false; } }
-        public bool ToggleMute() { _muted = !_muted; return _muted; }
+        public bool ToggleMute()
+        {
+            lock (_lock)
+            {
+                _muted = !_muted;
+                // 음소거 중엔 Update 가 조기 반환해 _nextStepSample 이 과거에 멈춰 있다.
+                // 해제 시 현재 위치로 당겨야 밀린 스텝이 한꺼번에 쏟아지지 않는다 (StartScore 와 같은 보정).
+                if (!_muted && _nextStepSample < _sample) _nextStepSample = _sample;
+                return _muted;
+            }
+        }
+
+        // 0.5초 선행 스케줄 / 최단 무드 스텝 0.115초 → 정상값은 프레임당 5스텝 안쪽.
+        const int MaxStepsPerFrame = 64;
 
         void Update()
         {
             if (!_scoreOn || _mood == null || _muted) return;
-            long now, until;
-            lock (_lock) { now = _sample; until = now + (long)(_sampleRate * 0.5f); }
-            while (true)
+            long until;
+            lock (_lock) { until = _sample + (long)(_sampleRate * 0.5f); }
+            for (int guard = 0; guard < MaxStepsPerFrame; guard++)
             {
                 long stepAt;
                 ScoreMood m;
                 int idx;
                 lock (_lock)
                 {
-                    if (_nextStepSample >= until) break;
+                    if (_nextStepSample >= until) return;
                     stepAt = _nextStepSample;
                     m = _mood; idx = _scoreStep;
-                    _nextStepSample += (long)(m.step * _sampleRate);
+                    long adv = (long)(m.step * _sampleRate);
+                    // step 이 0/음수로 저작되면 진행이 멈춰 루프가 끝나지 않는다 — 1초로 강등해 버틴다.
+                    if (adv < 1) adv = _sampleRate;
+                    _nextStepSample += adv;
                     _scoreStep++;
                 }
                 ScheduleStep(m, idx, stepAt);

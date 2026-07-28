@@ -47,6 +47,7 @@ namespace Mental
 
             AudioListener listener = Object.FindFirstObjectByType<AudioListener>();
             if (listener == null) listener = cam.gameObject.AddComponent<AudioListener>();
+            // 이 GO 에 AudioSource 를 추가하면 SfxSynth 의 OnAudioFilterRead 바인딩이 깨진다 (SfxSynth 헤더 참조).
             Audio = listener.gameObject.GetComponent<SfxSynth>();
             if (Audio == null) Audio = listener.gameObject.AddComponent<SfxSynth>();
 
@@ -93,7 +94,7 @@ namespace Mental
 
         public void StartCase(string caseMode)
         {
-            Audio?.UnlockAudio();
+            if (Audio != null) Audio.UnlockAudio();
             ClearCurrent();
             CourtEngine court = CourtEngine.Create(_canvas.transform, caseMode, ShowHub);
             _current = court.gameObject;

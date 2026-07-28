@@ -52,7 +52,7 @@ namespace Mental
                 string lang = Loc.Supported[i];
                 UiKit.MakeButton(box, names[i], VW / 2 - 160, 290 + i * 84, 320, 64, "gold", () =>
                 {
-                    GameRoot.Audio?.UnlockAudio();
+                    if (GameRoot.Audio != null) GameRoot.Audio.UnlockAudio();
                     Loc.Lang = lang;
                     BuildHub();
                 }, 24, "lang_" + lang);
@@ -90,7 +90,7 @@ namespace Mental
                 string l = Loc.Supported[i];
                 UiKit.UiButton b = UiKit.MakeButton(box, names[i], VW / 2 - 250 + i * 170, VH - 76, 160, 48, l == lang ? "gold" : "ghost", () =>
                 {
-                    GameRoot.Audio?.UnlockAudio();
+                    if (GameRoot.Audio != null) GameRoot.Audio.UnlockAudio();
                     Loc.Lang = l;
                     BuildHub();
                 }, 18, "lang_" + l);
@@ -129,7 +129,7 @@ namespace Mental
 
             UiKit.MakeButton(card.transform, loc.title.start, w - 220, h - 62, 200, 48, "gold", () =>
             {
-                GameRoot.Audio?.UnlockAudio();
+                if (GameRoot.Audio != null) GameRoot.Audio.UnlockAudio();
                 _onPlay?.Invoke(caseMode);
             }, 19, "play" + caseMode);
         }
