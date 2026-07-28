@@ -1,0 +1,1289 @@
+{
+ "locales": [
+  {
+   "lang": "ko",
+   "caseMode": "3",
+   "docTitle": "공정재판 · CASE 3 — 진실은, 언제나 그 사이에 있다",
+   "main": "← 메인",
+   "hint": "공정재판 · 외전 CASE 3 — 클릭 / 탭으로 진행",
+   "loading": "법정을 준비하는 중…",
+   "names": {
+    "judge": "재판장 이현중",
+    "mayoi": "마요이 아야사토",
+    "pros": "검사 강다나카 무무",
+    "def": "변호사 나단우",
+    "accused": "피고인 강도현"
+   },
+   "roles": {
+    "judge": "정신과 의사",
+    "mayoi": "판사"
+   },
+   "scale": {
+    "pros": "검사",
+    "def": "변호사",
+    "neutral": "중립",
+    "neutralOn": "◆ 중립 ◆"
+   },
+   "title": {
+    "start": "재판을 시작합니다",
+    "note": "※ 이현중의 첫 재판 (CASE 3)",
+    "main": "공정재판",
+    "sub": "역전재판 외전 · CASE 3",
+    "tag": "― 진실은, 언제나 그 사이에 있다 ―"
+   },
+   "open": [
+    {
+     "who": "mayoi",
+     "expr": "smile",
+     "text": "제3호 법정, 개정합니다. …이현중 선생님, 와 주셨군요."
+    },
+    {
+     "who": "mayoi",
+     "expr": "calm",
+     "text": "오늘 사건은 조금 특별합니다. 피고인의 정신 상태 자체가 쟁점이에요."
+    },
+    {
+     "who": "mayoi",
+     "expr": "calm",
+     "text": "그래서 정신과 의사인 당신을 「중립 재판장」으로 모셨습니다. 이 의사봉을 받으세요."
+    },
+    {
+     "who": "judge",
+     "expr": "tense",
+     "text": "제가… 재판장을 말입니까. 저는 진단은 해왔지만, 판결은 처음입니다."
+    },
+    {
+     "who": "mayoi",
+     "expr": "calm",
+     "text": "진단과 다르지 않아요. 다만 이번엔 두 개의 이야기를 듣게 됩니다. 검사와 변호사."
+    },
+    {
+     "who": "mayoi",
+     "expr": "tense",
+     "text": "검사는 「완전한 책임」을, 변호사는 「완전한 무죄」를 밀어붙일 겁니다. 양쪽 다 극단이죠."
+    },
+    {
+     "who": "mayoi",
+     "expr": "calm",
+     "text": "당신이 할 일은 셋. ① 양측 증언을 듣고 ② 과장된 주장엔 증거를 「제시」해 걷어내고"
+    },
+    {
+     "who": "mayoi",
+     "expr": "calm",
+     "text": "③ 법정이 소란해지면 의사봉으로 「정숙」시키는 것. 어느 쪽으로도 기울지 마세요."
+    },
+    {
+     "who": "judge",
+     "expr": "calm",
+     "text": "…양쪽의 과장을 모두 걷어내면, 남는 것이 진실이다."
+    },
+    {
+     "who": "mayoi",
+     "expr": "smile",
+     "text": "바로 그겁니다. 진실은, 언제나 그 사이에 있으니까요. ― 그럼, 시작하죠."
+    }
+   ],
+   "hearing": {
+    "prosBanner": "검사 측 증언 — 「완전한 책임」",
+    "defBanner": "변호사 측 증언 — 「심신상실」",
+    "prosTitle": "검사 측 증언",
+    "defTitle": "변호사 측 증언",
+    "testifying": "증언 중  {0}",
+    "prev": "◀ 이전",
+    "next": "다음 ▶",
+    "record": "⚖ 법정 기록",
+    "gavel": "🔨 정숙!",
+    "verdict": "중립\n판결",
+    "prosHint": "검사의 마지막 주장이 과합니다. 「법정 기록」의 증거로 반박하세요.",
+    "defHint": "변호사의 결론이 과합니다. 증거로 「제시」해 걷어내세요.",
+    "tooEarly": "아직 이릅니다. 양측의 과장을 모두 걷어낸 뒤에 판결할 수 있습니다.",
+    "trust": "재판 신뢰도",
+    "order": "법정 질서",
+    "overmark": "※ 무언가 과장돼 있다…",
+    "recordTitle": "⚖  법정 기록 — 증거품",
+    "present": "제시한다",
+    "close": "닫는다",
+    "accepted": "인정!",
+    "rejected": "기각!",
+    "objection": "이의있음!",
+    "orderBurst": "정숙!",
+    "noisy": "소란!",
+    "admittedPros": "…큭. 감정서가, 있었나.",
+    "judgePros": "정신감정서가 말합니다 — 피고인은 조증 삽화 중이었다. 검사의 「정신 문제 없음」은 과장입니다.",
+    "admittedDef": "그, 그건…",
+    "judgeDef": "CCTV가 말합니다 — 그는 스스로 119에 신고했다. 「전혀 알지 못했다」는 것은 과장입니다.",
+    "defenseRetort": "재판장님! 그래도 환자입니다!",
+    "prosecutorRetort": "재판장님! 그래도 범죄입니다!",
+    "gavelPrompt": "법정이 소란합니다. ― 의사봉으로 「정숙」시키세요.",
+    "chartHint": "관련은 있으나 결정적이지 않습니다. 「감정서」가 당시 상태를 직접 말합니다.",
+    "wrongEvidence": "그 증거는 이 진술과 맞지 않습니다. 신중히 — 어느 진술이 「과장」인지 보세요.",
+    "nextDefense": "좋습니다. 검사의 과장은 걷혔어요. 이제 변호인의 이야기를 듣죠.",
+    "readyVerdict": "양쪽의 과장이 모두 걷혔습니다. …남은 것은, 그 사이의 진실. 판결을 내리세요.",
+    "mistrial": "…재판의 신뢰가 무너졌습니다. 이대로면 재판은 무효입니다."
+   },
+   "verdict": {
+    "intro": "자 ― 재판장 이현중. 당신의 판결을 세 조각으로 맞추세요. 책임과, 처분을.",
+    "chooseBoth": "책임과 처분, 둘 다 골라야 합니다.",
+    "reconsider": "재고!",
+    "heading": "최 종 판 결",
+    "sub": "어느 쪽으로도 기울지 않은, 그 사이의 판결을.",
+    "capTitle": "① 피고인의 책임 능력",
+    "dispTitle": "② 처분의 방향",
+    "confirm": "⚖ 판결 확정",
+    "capFull": "완전 책임",
+    "capPartial": "심신미약\n(부분책임)",
+    "capNone": "심신상실\n(면책)",
+    "dispPunish": "엄중 처벌만",
+    "dispBoth": "처벌 + 치료\n병행",
+    "dispNone": "전부 면제",
+    "feedback": {
+     "full": "검사에게 기울었습니다. 정신감정서를 잊으셨습니까? 조증 삽화는 명백한 사실입니다.",
+     "none": "변호인에게 기울었습니다. CCTV 속, 스스로 119에 신고한 그 손을 보셨잖습니까?",
+     "disp": "책임은 옳게 보셨습니다. 허나 벌만으로도, 치료만으로도 진실은 반쪽입니다. 그 사이를 보십시오.",
+     "dispPunish": "",
+     "dispNone": "",
+     "ok": "심신미약 — 벌과 치료를 함께. 어느 쪽으로도 기울지 않은, 그 사이의 진실입니다."
+    }
+   },
+   "ending": {
+    "bang": "탕!",
+    "bangLast": "탕—!",
+    "seq": [
+     {
+      "who": "judge",
+      "expr": "calm",
+      "text": "주문. 피고인 강도현을 「심신미약」으로 인정한다."
+     },
+     {
+      "who": "judge",
+      "expr": "calm",
+      "text": "벌을 면할 수는 없다. 허나 그는 치료받아야 할 환자이기도 하다. ― 처벌과 치료를, 함께 명한다."
+     },
+     {
+      "who": "mayoi",
+      "expr": "smile",
+      "text": "…훌륭한 첫 재판이었습니다. 검사에게도, 변호사에게도 기울지 않았어요."
+     },
+     {
+      "who": "judge",
+      "expr": "calm",
+      "text": "양쪽의 과장을 걷어내니, 남은 건 이 사람이 정말 필요로 하던 것이었습니다."
+     },
+     {
+      "who": "mayoi",
+      "expr": "smile",
+      "text": "진실은, 언제나 그 사이에 있으니까요. ― 다음 사건도, 부탁드립니다. 이현중 재판장."
+     }
+    ],
+    "retry": "다시 재판하기",
+    "title": "타이틀로",
+    "clear": "공정재판 성립 — 진실은, 언제나 그 사이에 있었다",
+    "nextCase": "다음 사건 예고 — 「기억하지 못하는 증인」 (CASE 4)"
+   },
+   "gameover": {
+    "retry": "다시 심리하기",
+    "title": "타이틀로",
+    "head": "재 판 무 효",
+    "sub": "법정의 신뢰가 무너졌습니다. 침착하게, 다시.",
+    "hint": "힌트 — 「과장된 진술」에만 증거를 제시하세요. 소란하면 먼저 정숙을."
+   },
+   "evidence": [
+    {
+     "id": "eval",
+     "name": "정신감정서",
+     "icon": "📋",
+     "col": "#c9a24a",
+     "desc": "국립법의학센터 정신감정 결과.\n사건 당시 피고인은 양극성장애\n조증 삽화 상태 — 판단력 저하 소견.\n※ 단, 심신「상실」수준은 아님."
+    },
+    {
+     "id": "cctv",
+     "name": "옥상 CCTV",
+     "icon": "📹",
+     "col": "#5183d0",
+     "desc": "09:07 피고인이 피해자를 밀침.\n09:08 피고인이 스스로 119에 신고.\n\"사람이 떨어졌어요!\"\n→ 현실 검증 능력 일부 유지."
+    },
+    {
+     "id": "coworker",
+     "name": "동료 진술서",
+     "icon": "🗒️",
+     "col": "#8a9a4a",
+     "desc": "사건 2주 전부터 피고인은 잠을\n거의 못 자고 과소비·과대망상을\n보였다. \"평소의 그가 아니었다.\""
+    },
+    {
+     "id": "chart",
+     "name": "진료 기록",
+     "icon": "📁",
+     "col": "#b06a3a",
+     "desc": "3년 전 양극성장애 진단.\n최근 2개월 약물 임의 중단.\n조증 재발 경고가 기록돼 있음."
+    },
+    {
+     "id": "gavel",
+     "name": "재판장 의사봉",
+     "icon": "⚖️",
+     "col": "#d8b24a",
+     "desc": "중립 재판장 이현중의 의사봉.\n「나는 어느 편도 아니다.\n 나는, 저울이다.」"
+    }
+   ],
+   "pros": [
+    {
+     "who": "pros",
+     "expr": "tense",
+     "text": "피고인 강도현은 사건 3주 전부터 피해자 민경표 부장에게 깊은 원한을 품어 왔습니다.",
+     "key": "",
+     "over": ""
+    },
+    {
+     "who": "pros",
+     "expr": "tense",
+     "text": "사건 당일 아침, 피고인은 피해자를 옥상으로 직접 불러냈습니다. 우발적 사고가 아닙니다.",
+     "key": "",
+     "over": ""
+    },
+    {
+     "who": "pros",
+     "expr": "shock",
+     "text": "그리고 피고인은 피해자를 난간 너머로 밀쳤습니다. 처음부터 끝까지 계획된 범행입니다.",
+     "key": "",
+     "over": ""
+    },
+    {
+     "who": "pros",
+     "expr": "tense",
+     "text": "피고인에게는 그 어떤 정신적 문제도 없습니다. 완벽히 계산된, 냉정한 인물입니다.",
+     "key": "eval",
+     "over": "pros"
+    }
+   ],
+   "def": [
+    {
+     "who": "def",
+     "expr": "calm",
+     "text": "피고인은 사건 당시 양극성장애 조증 삽화의 한가운데 있었습니다. 감정서에 분명히 기록돼 있습니다.",
+     "key": "",
+     "over": ""
+    },
+    {
+     "who": "def",
+     "expr": "tense",
+     "text": "며칠째 잠도 못 자고 과대망상에 사로잡혀 있었습니다. 그는 평소의 그가 아니었습니다.",
+     "key": "",
+     "over": ""
+    },
+    {
+     "who": "def",
+     "expr": "shock",
+     "text": "피고인은 자신이 무슨 짓을 하는지 전혀 알지 못했습니다. 완전한 심신상실 — 무죄입니다.",
+     "key": "cctv",
+     "over": "def"
+    },
+    {
+     "who": "def",
+     "expr": "sad",
+     "text": "이런 환자에게 형벌을 내리는 것은, 병든 사람을 감옥에 가두는 일일 뿐입니다.",
+     "key": "",
+     "over": ""
+    }
+   ]
+  },
+  {
+   "lang": "en",
+   "caseMode": "3",
+   "docTitle": "Fair Trial · CASE 3 — Truth Is Always In Between",
+   "main": "← Main",
+   "hint": "Fair Trial · Side Story CASE 3 — click / tap to continue",
+   "loading": "Preparing the courtroom…",
+   "names": {
+    "judge": "Judge Lee Hyun-joong",
+    "mayoi": "Mayoi Ayasato",
+    "pros": "Prosecutor Dana K. Mumu",
+    "def": "Defense Attorney Na Dan-woo",
+    "accused": "Defendant Kang Do-hyun"
+   },
+   "roles": {
+    "judge": "Psychiatrist",
+    "mayoi": "Judge"
+   },
+   "scale": {
+    "pros": "Prosecution",
+    "def": "Defense",
+    "neutral": "Neutral",
+    "neutralOn": "◆ Neutral ◆"
+   },
+   "title": {
+    "start": "Start Trial",
+    "note": "※ Lee Hyun-joong’s first trial (CASE 3)",
+    "main": "Fair Trial",
+    "sub": "Ace Attorney Side Story · CASE 3",
+    "tag": "— Truth is always somewhere in between —"
+   },
+   "open": [
+    {
+     "who": "mayoi",
+     "expr": "smile",
+     "text": "Courtroom No. 3 is now in session. Dr. Lee, thank you for coming."
+    },
+    {
+     "who": "mayoi",
+     "expr": "calm",
+     "text": "Today’s case is unusual. The defendant’s mental state is the central issue."
+    },
+    {
+     "who": "mayoi",
+     "expr": "calm",
+     "text": "That is why we asked you, a psychiatrist, to serve as a neutral judge. Please take this gavel."
+    },
+    {
+     "who": "judge",
+     "expr": "tense",
+     "text": "Me… as the judge? I have made diagnoses, but I have never handed down a verdict."
+    },
+    {
+     "who": "mayoi",
+     "expr": "calm",
+     "text": "It is not so different from diagnosis. This time you will hear two stories: prosecution and defense."
+    },
+    {
+     "who": "mayoi",
+     "expr": "tense",
+     "text": "The prosecution will push full responsibility. The defense will push complete innocence. Both are extremes."
+    },
+    {
+     "who": "mayoi",
+     "expr": "calm",
+     "text": "Your job has three parts: hear both testimonies, present evidence against exaggerated claims,"
+    },
+    {
+     "who": "mayoi",
+     "expr": "calm",
+     "text": "and use the gavel for order when the court grows noisy. Do not lean to either side."
+    },
+    {
+     "who": "judge",
+     "expr": "calm",
+     "text": "…If I remove both exaggerations, what remains should be the truth."
+    },
+    {
+     "who": "mayoi",
+     "expr": "smile",
+     "text": "Exactly. Truth is always somewhere in between. Now, let us begin."
+    }
+   ],
+   "hearing": {
+    "prosBanner": "Prosecution Testimony — “Full Responsibility”",
+    "defBanner": "Defense Testimony — “Insanity”",
+    "prosTitle": "Prosecution Testimony",
+    "defTitle": "Defense Testimony",
+    "testifying": "Testimony  {0}",
+    "prev": "◀ Prev",
+    "next": "Next ▶",
+    "record": "⚖ Court Record",
+    "gavel": "🔨 Order!",
+    "verdict": "Neutral\nVerdict",
+    "prosHint": "The prosecutor’s final claim is exaggerated. Refute it with evidence from the Court Record.",
+    "defHint": "The defense conclusion is exaggerated. Present evidence to trim it back.",
+    "tooEarly": "Not yet. You can rule after removing both sides’ exaggerations.",
+    "trust": "Court Trust",
+    "order": "Court Order",
+    "overmark": "※ Something is exaggerated…",
+    "recordTitle": "⚖  Court Record — Evidence",
+    "present": "Present",
+    "close": "Close",
+    "accepted": "Accepted!",
+    "rejected": "Overruled!",
+    "objection": "Objection!",
+    "orderBurst": "Order!",
+    "noisy": "Disorder!",
+    "admittedPros": "…Tch. There was an evaluation?",
+    "judgePros": "The psychiatric evaluation says the defendant was in a manic episode. “No mental issue” is an exaggeration.",
+    "admittedDef": "Th-that is…",
+    "judgeDef": "The CCTV shows he called 911 himself. “He knew nothing at all” is an exaggeration.",
+    "defenseRetort": "Your Honor! He is still a patient!",
+    "prosecutorRetort": "Your Honor! It is still a crime!",
+    "gavelPrompt": "The court is in disorder. Use the gavel to restore order.",
+    "chartHint": "Related, but not decisive. The evaluation speaks directly to his state at the time.",
+    "wrongEvidence": "That evidence does not fit this statement. Look carefully at which statement is exaggerated.",
+    "nextDefense": "Good. The prosecutor’s exaggeration is gone. Now let us hear the defense.",
+    "readyVerdict": "Both exaggerations are gone. What remains is the truth in between. Deliver your verdict.",
+    "mistrial": "…The court’s trust has collapsed. At this rate, the trial is invalid."
+   },
+   "verdict": {
+    "intro": "Judge Lee Hyun-joong. Assemble your verdict in three parts: responsibility and disposition.",
+    "chooseBoth": "Choose both responsibility and disposition.",
+    "reconsider": "Reconsider!",
+    "heading": "FINAL VERDICT",
+    "sub": "A verdict in between, leaning to neither side.",
+    "capTitle": "1. Defendant’s capacity",
+    "dispTitle": "2. Disposition",
+    "confirm": "⚖ Confirm\nVerdict",
+    "capFull": "Full\nresponsibility",
+    "capPartial": "Diminished\ncapacity",
+    "capNone": "Insanity\n(no liability)",
+    "dispPunish": "Punishment\nonly",
+    "dispBoth": "Punishment\n+ treatment",
+    "dispNone": "Full\nexemption",
+    "feedback": {
+     "full": "You leaned toward the prosecution. Did you forget the psychiatric evaluation? The manic episode is clear.",
+     "none": "You leaned toward the defense. You saw his own hand call 911 in the CCTV.",
+     "disp": "You judged responsibility correctly, but punishment alone or treatment alone is only half the truth. Look between them.",
+     "dispPunish": "",
+     "dispNone": "",
+     "ok": "Diminished capacity — punishment and treatment together. The truth in between, leaning to neither side."
+    }
+   },
+   "ending": {
+    "bang": "Bang!",
+    "bangLast": "Bang—!",
+    "seq": [
+     {
+      "who": "judge",
+      "expr": "calm",
+      "text": "Order. The court recognizes defendant Kang Do-hyun as having diminished capacity."
+     },
+     {
+      "who": "judge",
+      "expr": "calm",
+      "text": "He cannot avoid punishment. But he is also a patient who needs treatment. I order punishment and treatment together."
+     },
+     {
+      "who": "mayoi",
+      "expr": "smile",
+      "text": "…An excellent first trial. You did not lean toward prosecution or defense."
+     },
+     {
+      "who": "judge",
+      "expr": "calm",
+      "text": "After trimming both exaggerations, what remained was what this person truly needed."
+     },
+     {
+      "who": "mayoi",
+      "expr": "smile",
+      "text": "Because truth is always somewhere in between. I will count on you for the next case, Judge Lee."
+     }
+    ],
+    "retry": "Retry Trial",
+    "title": "Title",
+    "clear": "Fair Trial established — truth was always in between",
+    "nextCase": "Next case preview — “The Witness Who Cannot Remember” (CASE 4)"
+   },
+   "gameover": {
+    "retry": "Retry Hearing",
+    "title": "Title",
+    "head": "MISTRIAL",
+    "sub": "The court’s trust collapsed. Stay calm and try again.",
+    "hint": "Hint — Present evidence only against exaggerated statements. Restore order first when the court is noisy."
+   },
+   "evidence": [
+    {
+     "id": "eval",
+     "name": "Psychiatric Evaluation",
+     "icon": "📋",
+     "col": "#c9a24a",
+     "desc": "National Forensic Center evaluation.\nAt the time of the incident, the defendant\nwas in a bipolar manic episode with impaired judgment.\n※ Not severe enough for complete insanity."
+    },
+    {
+     "id": "cctv",
+     "name": "Rooftop CCTV",
+     "icon": "📹",
+     "col": "#5183d0",
+     "desc": "09:07 The defendant pushed the victim.\n09:08 The defendant called 911 himself.\n\"Someone fell!\"\n→ Some reality testing remained."
+    },
+    {
+     "id": "coworker",
+     "name": "Coworker Statement",
+     "icon": "🗒️",
+     "col": "#8a9a4a",
+     "desc": "For two weeks before the incident,\nhe barely slept and showed overspending\nand grandiose delusions. \"He was not himself.\""
+    },
+    {
+     "id": "chart",
+     "name": "Clinical Record",
+     "icon": "📁",
+     "col": "#b06a3a",
+     "desc": "Diagnosed with bipolar disorder 3 years ago.\nStopped medication on his own for 2 months.\nRelapse warnings were recorded."
+    },
+    {
+     "id": "gavel",
+     "name": "Judge’s Gavel",
+     "icon": "⚖️",
+     "col": "#d8b24a",
+     "desc": "The gavel of neutral judge Lee Hyun-joong.\n\"I am not on either side.\n I am the scales.\""
+    }
+   ],
+   "pros": [
+    {
+     "who": "pros",
+     "expr": "tense",
+     "text": "Defendant Kang Do-hyun had held a deep grudge against department head Min Gyeong-pyo for three weeks.",
+     "key": "",
+     "over": ""
+    },
+    {
+     "who": "pros",
+     "expr": "tense",
+     "text": "On the morning of the incident, he personally called the victim to the roof. This was no accident.",
+     "key": "",
+     "over": ""
+    },
+    {
+     "who": "pros",
+     "expr": "shock",
+     "text": "Then he pushed the victim over the railing. It was planned from beginning to end.",
+     "key": "",
+     "over": ""
+    },
+    {
+     "who": "pros",
+     "expr": "tense",
+     "text": "The defendant had no mental issue whatsoever. He is a cold, fully calculating man.",
+     "key": "eval",
+     "over": "pros"
+    }
+   ],
+   "def": [
+    {
+     "who": "def",
+     "expr": "calm",
+     "text": "At the time of the incident, the defendant was in the middle of a bipolar manic episode. The evaluation says so clearly.",
+     "key": "",
+     "over": ""
+    },
+    {
+     "who": "def",
+     "expr": "tense",
+     "text": "He had not slept for days and was trapped in grandiose delusions. He was not his usual self.",
+     "key": "",
+     "over": ""
+    },
+    {
+     "who": "def",
+     "expr": "shock",
+     "text": "He had no idea what he was doing. Complete insanity — he is not guilty.",
+     "key": "cctv",
+     "over": "def"
+    },
+    {
+     "who": "def",
+     "expr": "sad",
+     "text": "Punishing a patient like this is simply locking a sick person in prison.",
+     "key": "",
+     "over": ""
+    }
+   ]
+  },
+  {
+   "lang": "ja",
+   "caseMode": "3",
+   "docTitle": "公正裁判 · CASE 3 — 真実は、いつもその間にある",
+   "main": "← メイン",
+   "hint": "公正裁判 · 外伝 CASE 3 — クリック / タップで進行",
+   "loading": "法廷を準備中…",
+   "names": {
+    "judge": "裁判長 イ・ヒョンジュン",
+    "mayoi": "マヨイ・アヤサト",
+    "pros": "検事 カンダナカ・ムム",
+    "def": "弁護士 ナ・ダヌ",
+    "accused": "被告人 カン・ドヒョン"
+   },
+   "roles": {
+    "judge": "精神科医",
+    "mayoi": "裁判官"
+   },
+   "scale": {
+    "pros": "検事",
+    "def": "弁護人",
+    "neutral": "中立",
+    "neutralOn": "◆ 中立 ◆"
+   },
+   "title": {
+    "start": "裁判を開始します",
+    "note": "※ イ・ヒョンジュンの初裁判 (CASE 3)",
+    "main": "公正裁判",
+    "sub": "逆転裁判 外伝 · CASE 3",
+    "tag": "― 真実は、いつもその間にある ―"
+   },
+   "open": [
+    {
+     "who": "mayoi",
+     "expr": "smile",
+     "text": "第3法廷、開廷します。…イ・ヒョンジュン先生、来てくださったのですね。"
+    },
+    {
+     "who": "mayoi",
+     "expr": "calm",
+     "text": "今日の事件は少し特別です。被告人の精神状態そのものが争点です。"
+    },
+    {
+     "who": "mayoi",
+     "expr": "calm",
+     "text": "そこで精神科医であるあなたを「中立裁判長」としてお招きしました。この木槌を受け取ってください。"
+    },
+    {
+     "who": "judge",
+     "expr": "tense",
+     "text": "私が…裁判長ですか。診断はしてきましたが、判決は初めてです。"
+    },
+    {
+     "who": "mayoi",
+     "expr": "calm",
+     "text": "診断と大きくは違いません。ただ今回は、検事と弁護人、二つの話を聞くことになります。"
+    },
+    {
+     "who": "mayoi",
+     "expr": "tense",
+     "text": "検事は「完全な責任」を、弁護人は「完全な無罪」を主張します。どちらも極端です。"
+    },
+    {
+     "who": "mayoi",
+     "expr": "calm",
+     "text": "あなたの仕事は三つ。両側の証言を聞き、誇張された主張には証拠を「提示」して取り除き、"
+    },
+    {
+     "who": "mayoi",
+     "expr": "calm",
+     "text": "法廷が騒がしくなったら木槌で「静粛」にすること。どちらにも傾かないでください。"
+    },
+    {
+     "who": "judge",
+     "expr": "calm",
+     "text": "…両側の誇張を取り除けば、残るものが真実だ。"
+    },
+    {
+     "who": "mayoi",
+     "expr": "smile",
+     "text": "その通りです。真実は、いつもその間にありますから。では、始めましょう。"
+    }
+   ],
+   "hearing": {
+    "prosBanner": "検事側証言 — 「完全責任」",
+    "defBanner": "弁護側証言 — 「心神喪失」",
+    "prosTitle": "検事側証言",
+    "defTitle": "弁護側証言",
+    "testifying": "証言中  {0}",
+    "prev": "◀ 前へ",
+    "next": "次へ ▶",
+    "record": "⚖ 法廷記録",
+    "gavel": "🔨 静粛!",
+    "verdict": "中立\n判決",
+    "prosHint": "検事の最後の主張が誇張されています。「法廷記録」の証拠で反論してください。",
+    "defHint": "弁護人の結論が誇張されています。証拠を「提示」して取り除いてください。",
+    "tooEarly": "まだ早いです。両側の誇張をすべて取り除いてから判決できます。",
+    "trust": "裁判信頼度",
+    "order": "法廷秩序",
+    "overmark": "※ 何かが誇張されている…",
+    "recordTitle": "⚖  法廷記録 — 証拠品",
+    "present": "提示する",
+    "close": "閉じる",
+    "accepted": "認定!",
+    "rejected": "却下!",
+    "objection": "異議あり!",
+    "orderBurst": "静粛!",
+    "noisy": "騒然!",
+    "admittedPros": "…くっ。鑑定書が、あったのか。",
+    "judgePros": "精神鑑定書は、被告人が躁病エピソード中だったと示しています。検事の「精神問題なし」は誇張です。",
+    "admittedDef": "そ、それは…",
+    "judgeDef": "CCTVは、彼が自分で119番に通報したと示しています。「何も分からなかった」は誇張です。",
+    "defenseRetort": "裁判長! それでも患者です!",
+    "prosecutorRetort": "裁判長! それでも犯罪です!",
+    "gavelPrompt": "法廷が騒然としています。木槌で「静粛」にしてください。",
+    "chartHint": "関連はありますが決定的ではありません。「鑑定書」が当時の状態を直接示しています。",
+    "wrongEvidence": "その証拠はこの陳述と合いません。どの陳述が「誇張」なのか慎重に見てください。",
+    "nextDefense": "よろしい。検事の誇張は取り除かれました。次は弁護人の話を聞きましょう。",
+    "readyVerdict": "両側の誇張が取り除かれました。残ったのは、その間にある真実。判決を下してください。",
+    "mistrial": "…裁判の信頼が崩れました。このままでは裁判は無効です。"
+   },
+   "verdict": {
+    "intro": "さあ、裁判長イ・ヒョンジュン。責任と処分、三つの断片で判決を組み立ててください。",
+    "chooseBoth": "責任と処分、両方を選んでください。",
+    "reconsider": "再考!",
+    "heading": "最 終 判 決",
+    "sub": "どちらにも傾かない、その間の判決を。",
+    "capTitle": "① 被告人の責任能力",
+    "dispTitle": "② 処分の方向",
+    "confirm": "⚖ 判決確定",
+    "capFull": "完全責任",
+    "capPartial": "心神耗弱\n(部分責任)",
+    "capNone": "心神喪失\n(免責)",
+    "dispPunish": "厳罰のみ",
+    "dispBoth": "処罰 + 治療\n併行",
+    "dispNone": "すべて免除",
+    "feedback": {
+     "full": "検事側に傾いています。精神鑑定書を忘れましたか？ 躁病エピソードは明らかな事実です。",
+     "none": "弁護人側に傾いています。CCTVで、自ら119番に通報したその手を見たはずです。",
+     "disp": "責任は正しく見ました。しかし罰だけでも、治療だけでも真実は半分です。その間を見てください。",
+     "dispPunish": "",
+     "dispNone": "",
+     "ok": "心神耗弱 — 罰と治療をともに。どちらにも傾かない、その間の真実です。"
+    }
+   },
+   "ending": {
+    "bang": "タン!",
+    "bangLast": "タン—!",
+    "seq": [
+     {
+      "who": "judge",
+      "expr": "calm",
+      "text": "主文。被告人カン・ドヒョンを「心神耗弱」と認める。"
+     },
+     {
+      "who": "judge",
+      "expr": "calm",
+      "text": "罰を免れることはできない。しかし彼は治療を受けるべき患者でもある。処罰と治療を、ともに命じる。"
+     },
+     {
+      "who": "mayoi",
+      "expr": "smile",
+      "text": "…見事な初裁判でした。検事にも弁護人にも傾きませんでしたね。"
+     },
+     {
+      "who": "judge",
+      "expr": "calm",
+      "text": "両側の誇張を取り除くと、残ったのはこの人が本当に必要としていたものだった。"
+     },
+     {
+      "who": "mayoi",
+      "expr": "smile",
+      "text": "真実は、いつもその間にありますから。次の事件もお願いします、イ・ヒョンジュン裁判長。"
+     }
+    ],
+    "retry": "もう一度裁判",
+    "title": "タイトルへ",
+    "clear": "公正裁判成立 — 真実は、いつもその間にあった",
+    "nextCase": "次回予告 — 「記憶していない証人」 (CASE 4)"
+   },
+   "gameover": {
+    "retry": "審理をやり直す",
+    "title": "タイトルへ",
+    "head": "裁 判 無 効",
+    "sub": "法廷の信頼が崩れました。落ち着いて、もう一度。",
+    "hint": "ヒント — 「誇張された陳述」にだけ証拠を提示してください。騒がしい時は先に静粛を。"
+   },
+   "evidence": [
+    {
+     "id": "eval",
+     "name": "精神鑑定書",
+     "icon": "📋",
+     "col": "#c9a24a",
+     "desc": "国立法医学センターの精神鑑定結果。\n事件当時、被告人は双極性障害の\n躁病エピソード状態 — 判断力低下の所見。\n※ ただし心神「喪失」水準ではない。"
+    },
+    {
+     "id": "cctv",
+     "name": "屋上CCTV",
+     "icon": "📹",
+     "col": "#5183d0",
+     "desc": "09:07 被告人が被害者を押した。\n09:08 被告人が自ら119番に通報。\n「人が落ちました!」\n→ 現実検討能力は一部維持。"
+    },
+    {
+     "id": "coworker",
+     "name": "同僚陳述書",
+     "icon": "🗒️",
+     "col": "#8a9a4a",
+     "desc": "事件2週間前から、被告人はほとんど\n眠れず、浪費と誇大妄想を示した。\n「普段の彼ではなかった。」"
+    },
+    {
+     "id": "chart",
+     "name": "診療記録",
+     "icon": "📁",
+     "col": "#b06a3a",
+     "desc": "3年前に双極性障害と診断。\n最近2か月、薬を自己中断。\n躁病再発の警告が記録されている。"
+    },
+    {
+     "id": "gavel",
+     "name": "裁判長の木槌",
+     "icon": "⚖️",
+     "col": "#d8b24a",
+     "desc": "中立裁判長イ・ヒョンジュンの木槌。\n「私はどちらの味方でもない。\n 私は、天秤だ。」"
+    }
+   ],
+   "pros": [
+    {
+     "who": "pros",
+     "expr": "tense",
+     "text": "被告人カン・ドヒョンは、事件3週間前から被害者ミン・ギョンピョ部長に深い恨みを抱いていました。",
+     "key": "",
+     "over": ""
+    },
+    {
+     "who": "pros",
+     "expr": "tense",
+     "text": "事件当日の朝、被告人は被害者を自ら屋上へ呼び出しました。偶発事故ではありません。",
+     "key": "",
+     "over": ""
+    },
+    {
+     "who": "pros",
+     "expr": "shock",
+     "text": "そして被告人は被害者を手すりの向こうへ突き落としました。最初から最後まで計画された犯行です。",
+     "key": "",
+     "over": ""
+    },
+    {
+     "who": "pros",
+     "expr": "tense",
+     "text": "被告人にはいかなる精神的問題もありません。完全に計算された、冷静な人物です。",
+     "key": "eval",
+     "over": "pros"
+    }
+   ],
+   "def": [
+    {
+     "who": "def",
+     "expr": "calm",
+     "text": "被告人は事件当時、双極性障害の躁病エピソードのただ中にいました。鑑定書に明記されています。",
+     "key": "",
+     "over": ""
+    },
+    {
+     "who": "def",
+     "expr": "tense",
+     "text": "何日も眠れず、誇大妄想に囚われていました。彼は普段の彼ではありませんでした。",
+     "key": "",
+     "over": ""
+    },
+    {
+     "who": "def",
+     "expr": "shock",
+     "text": "被告人は自分が何をしているのか全く分かっていませんでした。完全な心神喪失 — 無罪です。",
+     "key": "cctv",
+     "over": "def"
+    },
+    {
+     "who": "def",
+     "expr": "sad",
+     "text": "このような患者に刑罰を下すのは、病人を刑務所に閉じ込めるだけです。",
+     "key": "",
+     "over": ""
+    }
+   ]
+  },
+  {
+   "lang": "ko",
+   "caseMode": "4",
+   "docTitle": "공정재판 · CASE 4 — 영수증 없는 화장실",
+   "main": "← 메인",
+   "hint": "공정재판 · 외전 CASE 4 — 클릭 / 탭으로 진행",
+   "loading": "법정을 준비하는 중…",
+   "names": {
+    "judge": "재판장 이현중",
+    "mayoi": "마요이 아야사토",
+    "pros": "검사 강다나카 무무",
+    "def": "변호사 나단우",
+    "accused": "피고인 강무"
+   },
+   "roles": {
+    "judge": "정신과 의사",
+    "mayoi": "판사"
+   },
+   "scale": {
+    "pros": "점포 측",
+    "def": "이용자 측",
+    "neutral": "균형",
+    "neutralOn": "◆ 균형 ◆"
+   },
+   "title": {
+    "start": "재판을 시작합니다",
+    "note": "※ 편의점 임시 법정 (CASE 4)",
+    "main": "영수증 없는 화장실",
+    "sub": "역전재판 외전 · CASE 4",
+    "tag": "― 편의점은, 누구의 화장실인가 ―"
+   },
+   "open": [
+    {
+     "who": "mayoi",
+     "expr": "smile",
+     "text": "제3호 법정, 개정합니다. 오늘은 법정이 아니라 도쿄의 한 편의점 계산대 앞에서 시작됐어요."
+    },
+    {
+     "who": "mayoi",
+     "expr": "calm",
+     "text": "손님들은 방청석이 되고, 상품 진열대는 법정 배경이 됐습니다. 화장실 하나가 재판을 열어 버렸어요."
+    },
+    {
+     "who": "judge",
+     "expr": "calm",
+     "text": "피고인 강무는 아무것도 사지 않고 화장실을 이용했습니다. 점원은 청소비와 휴지값을 누가 내느냐고 따졌고요."
+    },
+    {
+     "who": "mayoi",
+     "expr": "tense",
+     "text": "편의점 측은 작은 구매가 최소한의 배려라고 합니다. 변호인은 필요 없는 상품을 강제로 살 수는 없다고 맞섭니다."
+    },
+    {
+     "who": "judge",
+     "expr": "calm",
+     "text": "먼저 바로잡을 것은 하나입니다. 이곳은 일본 대사관 안이 아닙니다. 도쿄의 민간 편의점입니다."
+    },
+    {
+     "who": "judge",
+     "expr": "calm",
+     "text": "따라서 국적이나 대사관이라는 말은 빼죠. 운영비, 위급한 이용, 그리고 실제 행동만 보겠습니다."
+    },
+    {
+     "who": "mayoi",
+     "expr": "tense",
+     "text": "검사는 무구매 이용이 곧 범죄라고 합니다. 변호인은 퇴거 요구가 아예 없었다고 합니다. 양쪽 다 극단이에요."
+    },
+    {
+     "who": "judge",
+     "expr": "calm",
+     "text": "예절과 범죄를 섞지 마세요. 양쪽의 과장을 증거로 걷어내고, 그 사이의 판단을 찾겠습니다."
+    },
+    {
+     "who": "mayoi",
+     "expr": "smile",
+     "text": "좋습니다. 편의점 임시 법정, 심리를 시작하겠습니다."
+    }
+   ],
+   "hearing": {
+    "prosBanner": "점포 측 증언 — 「무구매는 범죄」",
+    "defBanner": "이용자 측 증언 — 「퇴거 요구는 없었다」",
+    "prosTitle": "점포 측 증언",
+    "defTitle": "이용자 측 증언",
+    "testifying": "증언 중  {0}",
+    "prev": "◀ 이전",
+    "next": "다음 ▶",
+    "record": "⚖ 법정 기록",
+    "gavel": "🔨 정숙!",
+    "verdict": "균형\n판결",
+    "prosHint": "점포 측의 마지막 주장이 과합니다. 「법정 기록」의 증거로 반박하세요.",
+    "defHint": "이용자 측의 결론이 과합니다. 증거로 「제시」해 걷어내세요.",
+    "tooEarly": "아직 이릅니다. 양쪽의 과장을 모두 걷어낸 뒤에 판결할 수 있습니다.",
+    "trust": "재판 신뢰도",
+    "order": "법정 질서",
+    "overmark": "※ 무언가 과장돼 있다…",
+    "recordTitle": "⚖  법정 기록 — 증거품",
+    "present": "제시한다",
+    "close": "닫는다",
+    "accepted": "인정!",
+    "rejected": "기각!",
+    "objection": "이의있음!",
+    "orderBurst": "정숙!",
+    "noisy": "소란!",
+    "admittedPros": "…운영비가 든다는 사실만으로는 부족하다고?",
+    "judgePros": "쟁점 카드는 말합니다 — 무구매 이용은 매장 정책과 예절의 문제일 수 있어도, 그 자체가 형사처벌 요건은 아닙니다.",
+    "admittedDef": "그, 그래도 점원은 손님에게 말을 걸었을 뿐…",
+    "judgeDef": "번역 앱 기록은 말합니다 — 점원은 분명히 나가 달라고 요구했습니다. 「요구가 없었다」는 과장입니다.",
+    "defenseRetort": "재판장님! 위급한 이용자에게까지 부담을 지울 수는 없습니다!",
+    "prosecutorRetort": "재판장님! 점포의 운영비도 누군가는 부담해야 합니다!",
+    "gavelPrompt": "법정이 소란합니다. ― 의사봉으로 「정숙」시키세요.",
+    "chartHint": "운영비는 중요한 사정이지만, 지금 반박해야 할 것은 「무구매 자체가 범죄」라는 주장입니다.",
+    "wrongEvidence": "그 증거는 이 진술과 맞지 않습니다. 신중히 — 어느 진술이 「과장」인지 보세요.",
+    "nextDefense": "좋습니다. 점포 측의 과장은 걷혔어요. 이제 이용자 측의 이야기를 듣죠.",
+    "readyVerdict": "양쪽의 과장이 모두 걷혔습니다. …남은 것은, 그 사이의 판단. 판결을 내리세요.",
+    "mistrial": "…재판의 신뢰가 무너졌습니다. 이대로면 재판은 무효입니다."
+   },
+   "verdict": {
+    "intro": "자 ― 재판장 이현중. 판단 기준과 결론을 조립하세요. 예절과 범죄를 분리해야 합니다.",
+    "chooseBoth": "기준과 결론, 둘 다 골라야 합니다.",
+    "reconsider": "재고!",
+    "heading": "최 종 판 결",
+    "sub": "점포의 부담과 이용자의 사정, 어느 하나만 보지 마세요.",
+    "capTitle": "① 범죄 판단의 기준",
+    "dispTitle": "② 이 사건의 결론",
+    "confirm": "⚖ 판결 확정",
+    "capFull": "무구매\n이용 자체",
+    "capPartial": "퇴거 요구 후\n실제 행동",
+    "capNone": "예절만\n판단",
+    "dispPunish": "유죄",
+    "dispBoth": "무죄 +\n배려 권고",
+    "dispNone": "판단\n유보",
+    "feedback": {
+     "full": "점포 측으로 기울었습니다. 구매하지 않았다는 사실만으로 형사처벌이 정해지지는 않습니다.",
+     "none": "이용자 측으로 기울었습니다. 예절만을 보아도 이 사건의 법적 기준은 남지 않습니다. 명확한 퇴거 요구 뒤의 체류를 보세요.",
+     "disp": "기준은 옳게 보셨습니다. 그러나 강무는 요구를 이해한 뒤 곧바로 나갔습니다. 이 사실관계에 맞는 결론을 고르세요.",
+     "dispPunish": "퇴거 요구는 있었지만, CCTV에는 강무가 번역을 확인한 뒤 21초 안에 퇴장한 사실이 남아 있습니다. 이 사건의 결론은 유죄가 아닙니다.",
+     "dispNone": "판단을 미룰 쟁점이 아닙니다. 퇴거 요구와 즉시 퇴장이 모두 확인된 이상, 결론을 내릴 수 있습니다.",
+     "ok": "무구매 이용은 배려의 문제일 수 있으나, 이 사건에서 강무는 퇴거 요구에 곧바로 따랐습니다. 무죄와 배려 권고 — 그 사이의 판단입니다."
+    }
+   },
+   "ending": {
+    "bang": "탕!",
+    "bangLast": "탕—!",
+    "seq": [
+     {
+      "who": "judge",
+      "expr": "calm",
+      "text": "주문. 피고인 강무에게 무죄를 선고한다."
+     },
+     {
+      "who": "judge",
+      "expr": "calm",
+      "text": "편의점은 공짜 화장실이 아니다. 청소와 물품에는 비용이 들고, 가능하다면 작은 구매는 분명 배려다."
+     },
+     {
+      "who": "judge",
+      "expr": "calm",
+      "text": "그러나 그 예절을 곧바로 형사처벌로 바꿀 수는 없다. 이 사건의 핵심은 퇴거 요구 뒤에도 남아 있었는가다."
+     },
+     {
+      "who": "mayoi",
+      "expr": "smile",
+      "text": "점원은 떠나 달라고 요구했지만, 번역 기록과 CCTV상 강무는 뜻을 이해한 뒤 곧바로 매장을 나갔어요."
+     },
+     {
+      "who": "judge",
+      "expr": "calm",
+      "text": "점포의 부담도, 위급한 이용자의 사정도 함께 보아야 한다. 법정은 불쾌함이 아니라 구성요건에 맞는 행동을 판단할 뿐이다."
+     }
+    ],
+    "retry": "다시 재판하기",
+    "title": "타이틀로",
+    "clear": "공정재판 성립 — 예절과 범죄, 그 사이의 판단",
+    "nextCase": "CASE 4 완료 — 「영수증 없는 화장실」"
+   },
+   "gameover": {
+    "retry": "다시 심리하기",
+    "title": "타이틀로",
+    "head": "재 판 무 효",
+    "sub": "법정의 신뢰가 무너졌습니다. 침착하게, 다시.",
+    "hint": "힌트 — 「과장된 진술」에만 증거를 제시하세요. 소란하면 먼저 정숙을."
+   },
+   "evidence": [
+    {
+     "id": "law",
+     "name": "사건 판단 기준 카드",
+     "icon": "⚖",
+     "col": "#c9a24a",
+     "desc": "이 사건에서 법정이 적용하는 판단 기준.\n무구매 이용은 매장 정책과 예절의 문제.\n핵심은 퇴거 요구 뒤 실제 행동이다."
+    },
+    {
+     "id": "translation",
+     "name": "번역 앱 기록",
+     "icon": "📱",
+     "col": "#5183d0",
+     "desc": "11:08:05 “구매하지 않으시면 나가 주세요”가\n강무의 화면에 한국어로 표시됨.\n명확한 퇴거 요구는 실제로 있었다."
+    },
+    {
+     "id": "cctv",
+     "name": "매장 CCTV",
+     "icon": "📹",
+     "col": "#43c47a",
+     "desc": "11:08:05 번역을 확인한 강무가\n11:08:24 출입문을 통과.\n요구를 이해한 뒤 21초 안에 퇴장했다."
+    },
+    {
+     "id": "cost",
+     "name": "화장실 운영비 명세",
+     "icon": "🧾",
+     "col": "#b06a3a",
+     "desc": "청소·물·전기·휴지 비용은 점포가 부담.\n작은 구매가 배려가 될 수 있음을 보여 준다.\n하지만 그 자체가 형벌 규정은 아니다."
+    },
+    {
+     "id": "gavel",
+     "name": "재판장 의사봉",
+     "icon": "⚖️",
+     "col": "#d8b24a",
+     "desc": "중립 재판장 이현중의 의사봉.\n「나는 어느 편도 아니다.\n 나는, 저울이다.」"
+    }
+   ],
+   "pros": [
+    {
+     "who": "pros",
+     "expr": "tense",
+     "text": "피고인 강무는 계산대도 보지 않고 화장실로 직행했습니다. 물과 전기, 청소와 휴지는 매장이 모두 부담합니다.",
+     "key": "",
+     "over": ""
+    },
+    {
+     "who": "pros",
+     "expr": "tense",
+     "text": "한 사람이 작은 비용을 아끼려는 동안, 그 비용은 다음 손님과 점원에게 넘어갑니다. 이곳은 무료 공중화장실이 아닙니다.",
+     "key": "",
+     "over": ""
+    },
+    {
+     "who": "pros",
+     "expr": "shock",
+     "text": "점원은 음료 하나라도 사 달라고 권했습니다. 이용한 시설에 최소한의 배려를 요청한 것입니다.",
+     "key": "",
+     "over": ""
+    },
+    {
+     "who": "pros",
+     "expr": "tense",
+     "text": "따라서 물건을 하나도 사지 않은 그 순간, 강무는 이미 범죄자가 되었습니다.",
+     "key": "law",
+     "over": "pros"
+    }
+   ],
+   "def": [
+    {
+     "who": "def",
+     "expr": "calm",
+     "text": "검사는 매장의 운영비와 형사처벌을 뒤섞고 있습니다. 표지판이 있다고 모든 위반이 범죄가 되는 것은 아닙니다.",
+     "key": "",
+     "over": ""
+    },
+    {
+     "who": "def",
+     "expr": "tense",
+     "text": "강무는 일본어 표지판을 읽지 못했고, 급한 생리현상 때문에 화장실을 이용했습니다. 위급할 때 편의점은 꼭 필요한 장소가 될 수 있습니다.",
+     "key": "",
+     "over": ""
+    },
+    {
+     "who": "def",
+     "expr": "shock",
+     "text": "점원이 “나가 달라”고 말한 일은 단 한 번도 없었습니다. 그러니 퇴거 요구 불응도 없습니다.",
+     "key": "translation",
+     "over": "def"
+    },
+    {
+     "who": "def",
+     "expr": "sad",
+     "text": "필요 없는 상품을 억지로 사게 하면 그 역시 이용자에게 부담입니다. 예절은 강매가 될 수 없습니다.",
+     "key": "",
+     "over": ""
+    }
+   ]
+  }
+ ],
+ "courtCopy": [
+  {
+   "lang": "ko",
+   "claim": "반박할 주장",
+   "direct": "직접 반박",
+   "near": "관련은 있으나 결정적이지 않음",
+   "other": "현재 주장과 직접 연결되지 않음",
+   "firstMiss": "이 증거는 현재 주장에 직접 닿지 않습니다. 사건 당시를 가장 분명히 말하는 기록을 다시 보세요.",
+   "facts": "확정된 사실",
+   "gavel": "이의가 제기됐습니다. 의사봉으로 정숙시키면 다음 쟁점이 확정됩니다.",
+   "evidenceFail": "증거를 고를 땐 현재 반박할 주장과 사건 당시의 직접 근거를 연결하세요.",
+   "orderFail": "이의가 나온 뒤에는 먼저 의사봉으로 법정 질서를 회복하세요."
+  },
+  {
+   "lang": "en",
+   "claim": "Claim to refute",
+   "direct": "Direct refutation",
+   "near": "Related, but not decisive",
+   "other": "Not directly tied to this claim",
+   "firstMiss": "This evidence does not directly reach the claim. Revisit the record that speaks most clearly about the moment in question.",
+   "facts": "Established facts",
+   "gavel": "An objection is on the floor. Restore order with the gavel to confirm the next issue.",
+   "evidenceFail": "Match the claim under review with evidence that directly addresses the moment in question.",
+   "orderFail": "After an objection, restore court order with the gavel first."
+  },
+  {
+   "lang": "ja",
+   "claim": "反論すべき主張",
+   "direct": "直接の反証",
+   "near": "関連はあるが決定的ではない",
+   "other": "この主張と直接つながらない",
+   "firstMiss": "この証拠は現在の主張を直接示していません。当時の状況を最も明確に語る記録を見直してください。",
+   "facts": "確定した事実",
+   "gavel": "異議が出ています。木槌で静粛にすれば、次の争点が確定します。",
+   "evidenceFail": "反論すべき主張と、当時の状況を直接示す証拠を結び付けてください。",
+   "orderFail": "異議が出た後は、先に木槌で法廷の秩序を回復してください。"
+  }
+ ],
+ "deduction": [
+  {
+   "caseMode": "3",
+   "side": "pros",
+   "claim": {
+    "ko": "피고인에게는 정신적 문제가 없다",
+    "en": "The defendant had no mental-health issue",
+    "ja": "被告人には精神的な問題がない"
+   },
+   "near": [
+    {
+     "evidenceId": "chart",
+     "ko": "진료 기록은 과거 이력입니다. 사건 당시 판단력은 정신감정서가 직접 말합니다.",
+     "en": "The chart is history. The psychiatric evaluation speaks directly to capacity at the time.",
+     "ja": "診療記録は過去の経緯です。当時の判断力を直接語るのは精神鑑定書です。"
+    },
+    {
+     "evidenceId": "coworker",
+     "ko": "동료 진술은 조증 징후를 보이지만, 사건 당시 판단력의 직접 근거는 아닙니다.",
+     "en": "The coworker statement shows warning signs, not direct capacity at the incident.",
+     "ja": "同僚の供述は兆候を示しますが、事件当時の判断力を直接示すものではありません。"
+    }
+   ]
+  },
+  {
+   "caseMode": "3",
+   "side": "def",
+   "claim": {
+    "ko": "피고인은 자신의 행위를 전혀 알지 못했다",
+    "en": "The defendant understood nothing about his actions",
+    "ja": "被告人は自分の行為をまったく理解していなかった"
+   },
+   "near": [
+    {
+     "evidenceId": "coworker",
+     "ko": "동료 진술은 증상을 보여 주지만, 사건 직후의 현실 검증 능력은 CCTV가 직접 말합니다.",
+     "en": "The coworker statement shows symptoms, but the CCTV directly shows reality testing after the incident.",
+     "ja": "同僚の供述は症状を示しますが、事件直後の現実検討能力を直接示すのはCCTVです。"
+    }
+   ]
+  },
+  {
+   "caseMode": "4",
+   "side": "pros",
+   "claim": {
+    "ko": "무구매 이용만으로 이미 범죄가 됐다",
+    "en": "무구매 이용만으로 이미 범죄가 됐다",
+    "ja": "무구매 이용만으로 이미 범죄가 됐다"
+   },
+   "near": [
+    {
+     "evidenceId": "cost",
+     "ko": "운영비는 배려가 필요한 이유를 보여 주지만, 무구매 자체를 범죄로 만드는 직접 기준은 아닙니다.",
+     "en": "운영비는 배려가 필요한 이유를 보여 주지만, 무구매 자체를 범죄로 만드는 직접 기준은 아닙니다.",
+     "ja": "운영비는 배려가 필요한 이유를 보여 주지만, 무구매 자체를 범죄로 만드는 직접 기준은 아닙니다."
+    }
+   ]
+  },
+  {
+   "caseMode": "4",
+   "side": "def",
+   "claim": {
+    "ko": "점원이 나가 달라고 요구한 일은 없다",
+    "en": "점원이 나가 달라고 요구한 일은 없다",
+    "ja": "점원이 나가 달라고 요구한 일은 없다"
+   },
+   "near": [
+    {
+     "evidenceId": "cctv",
+     "ko": "CCTV는 요구 뒤의 행동을 말합니다. 요구가 실제로 전달됐는지는 번역 앱 기록이 직접 보여 줍니다.",
+     "en": "CCTV는 요구 뒤의 행동을 말합니다. 요구가 실제로 전달됐는지는 번역 앱 기록이 직접 보여 줍니다.",
+     "ja": "CCTV는 요구 뒤의 행동을 말합니다. 요구가 실제로 전달됐는지는 번역 앱 기록이 직접 보여 줍니다."
+    }
+   ]
+  }
+ ],
+ "verdictFacts": [
+  {
+   "caseMode": "3",
+   "facts": [
+    {
+     "icon": "📋",
+     "ko": "감정서: 조증 삽화 · 판단력 저하",
+     "en": "Evaluation: manic episode · impaired judgment",
+     "ja": "鑑定書: 躁病エピソード · 判断力低下"
+    },
+    {
+     "icon": "📹",
+     "ko": "CCTV: 119 신고 · 현실검증 일부 유지",
+     "en": "CCTV: called 911 · some reality testing remained",
+     "ja": "CCTV: 自ら通報 · 現実検討能力が一部残存"
+    }
+   ]
+  },
+  {
+   "caseMode": "4",
+   "facts": [
+    {
+     "icon": "📱",
+     "ko": "번역 기록: 퇴거 요구가 한국어로 표시됨",
+     "en": "번역 기록: 퇴거 요구가 한국어로 표시됨",
+     "ja": "번역 기록: 퇴거 요구가 한국어로 표시됨"
+    },
+    {
+     "icon": "📹",
+     "ko": "CCTV: 요구를 이해한 뒤 21초 안에 퇴장",
+     "en": "CCTV: 요구를 이해한 뒤 21초 안에 퇴장",
+     "ja": "CCTV: 요구를 이해한 뒤 21초 안에 퇴장"
+    }
+   ]
+  }
+ ]
+}

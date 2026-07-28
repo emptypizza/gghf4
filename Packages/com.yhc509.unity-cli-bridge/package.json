@@ -1,0 +1,14 @@
+{
+  "name": "com.yhc509.unity-cli-bridge",
+  "displayName": "Unity CLI Bridge",
+  "version": "0.4.1",
+  "unity": "2023.1",
+  "description": "Project-aware Unity Editor bridge for CLI control without manual servers or per-project ports.",
+  "author": {
+    "name": "yhc509"
+  },
+  "dependencies": {
+    "com.unity.recorder": "5.1.6",
+    "com.unity.nuget.newtonsoft-json": "3.2.2"
+  }
+}

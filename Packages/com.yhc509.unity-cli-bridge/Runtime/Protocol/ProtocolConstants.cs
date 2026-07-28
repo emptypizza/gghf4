@@ -1,0 +1,277 @@
+#nullable enable
+using System;
+using System.IO;
+using System.Security.Cryptography;
+using System.Runtime.InteropServices;
+using System.Text;
+
+namespace UnityCli.Protocol
+{
+    public static class ProtocolConstants
+    {
+        public const string AppName = "unity-cli";
+        public const string ProtocolVersion = "5";
+        public const int DefaultLiveTimeoutMs = 30_000;
+        public const int DefaultTimeoutMs = DefaultLiveTimeoutMs;
+        public const int DefaultExecuteTimeoutMs = 30_000;
+        public const int MaxExecuteTimeoutMs = 600_000;
+        public const int DefaultConsoleLimit = 50;
+        public const int DefaultAssetFindLimit = 50;
+        public const int DefaultPackageListLimit = 0;
+        public const int DefaultPackageRequestTimeoutSeconds = 300;
+        public const int DefaultPackageLiveTimeoutMs = 360_000;
+        public const int DefaultCompileRefreshWaitTimeoutSeconds = 120;
+        public const int DefaultTestRunTimeoutSeconds = 300;
+        public const int MaxTestRunTimeoutSeconds = 1800;
+        public const int TestRunCancelGraceSeconds = 30;
+        public const int RegistryHeartbeatSeconds = 2;
+        public const string BusyErrorCode = "BUSY";
+        public const string ErrorAssetForceRequired = "ASSET_FORCE_REQUIRED";
+        public const string ErrorExecuteForceRequired = "EXECUTE_FORCE_REQUIRED";
+        public const string ErrorExecuteTimeout = "EXECUTE_TIMEOUT";
+        public const string ErrorPrefabForceRequired = "PREFAB_FORCE_REQUIRED";
+        public const string ErrorPrefabStageDirty = "PREFAB_STAGE_DIRTY";
+        public const string ErrorPackageForceRequired = "PACKAGE_FORCE_REQUIRED";
+        public const string ErrorPackageBusy = "PACKAGE_BUSY";
+        public const string PackageBusyMessage = "다른 패키지 명령이 진행 중입니다. 완료 후 다시 시도하세요.";
+        public const string ErrorPackageTimeout = "PACKAGE_TIMEOUT";
+        public const string ErrorTestBusy = "TEST_RUN_IN_PROGRESS";
+        public const string ErrorTestTimeout = "TEST_RUN_TIMEOUT";
+        public const string ErrorTestCancelled = "TEST_RUN_CANCELLED";
+        public const string ErrorTestRunFailed = "TEST_RUN_FAILED";
+        public const string ErrorTestInterrupted = "TEST_RUN_INTERRUPTED";
+        public const string ErrorTestListTimeout = "TEST_LIST_TIMEOUT";
+        public const string ErrorTestRunNotFound = "TEST_RUN_NOT_FOUND";
+        public const string ErrorTestInvalidMode = "TEST_INVALID_MODE";
+        public const string ErrorTestPlayModeEntryFailed = "TEST_PLAYMODE_ENTRY_FAILED";
+        public const string ErrorRecordRequiresPlaymode = "RECORD_REQUIRES_PLAYMODE";
+        public const string ErrorRecordInProgress = "RECORD_IN_PROGRESS";
+        public const string ErrorRecordNotActive = "RECORD_NOT_ACTIVE";
+        public const string ErrorRecordFailed = "RECORD_FAILED";
+        public const string ErrorRecordInterrupted = "RECORD_INTERRUPTED";
+        public const string ErrorRecordNotFound = "RECORD_NOT_FOUND";
+        public const string ErrorRecordTimeout = "RECORD_TIMEOUT";
+        public const string ErrorCompileWaitTimeout = "COMPILE_WAIT_TIMEOUT";
+        public const string ErrorRefreshWaitTimeout = "REFRESH_WAIT_TIMEOUT";
+        public const string ErrorSceneForceRequired = "SCENE_FORCE_REQUIRED";
+        public const string ErrorBackupFailed = "BACKUP_FAILED";
+        public const string ErrorBackupRestoreFailed = "BACKUP_RESTORE_FAILED";
+        public const string ErrorInternalInvalidPayload = "INTERNAL_INVALID_PAYLOAD";
+        public const string ErrorProtocolMismatch = "PROTOCOL_MISMATCH";
+        public const string ErrorUnauthorized = "UNAUTHORIZED";
+        public const string ErrorSceneDirty = "SCENE_DIRTY";
+        public const string StatusSuccess = "success";
+        public const string StatusError = "error";
+        public const string TransportLive = "live";
+        public const string CommandPing = "ping";
+        public const string CommandStatus = "status";
+        public const string CommandRefresh = "refresh";
+        public const string CommandCompile = "compile";
+        public const string CommandPlay = "play";
+        public const string CommandPause = "pause";
+        public const string CommandStop = "stop";
+        public const string CommandExecuteMenu = "execute-menu";
+        public const string CommandScreenshot = "screenshot";
+        public const string CommandRecordStart = "record-start";
+        public const string CommandRecordStop = "record-stop";
+        public const string CommandRecordStatus = "record-status";
+        public const string CommandExecuteCode = "execute-code";
+        public const string CommandCustom = "custom";
+        public const string CommandTestList = "test-list";
+        public const string CommandTestRun = "test-run";
+        public const string CommandTestResults = "test-results";
+        public const string CommandPackageList = "package-list";
+        public const string CommandPackageAdd = "package-add";
+        public const string CommandPackageRemove = "package-remove";
+        public const string CommandPackageSearch = "package-search";
+        public const string CommandMaterialInfo = "material-info";
+        public const string CommandMaterialSet = "material-set";
+        public const string CommandReadConsole = "read-console";
+        public const string CommandAssetFind = "asset-find";
+        public const string CommandAssetTypes = "asset-types";
+        public const string CommandAssetInfo = "asset-info";
+        public const string CommandAssetReimport = "asset-reimport";
+        public const string CommandAssetMkdir = "asset-mkdir";
+        public const string CommandAssetMove = "asset-move";
+        public const string CommandAssetRename = "asset-rename";
+        public const string CommandAssetDelete = "asset-delete";
+        public const string CommandAssetCreate = "asset-create";
+        public const string CommandSceneOpen = "scene-open";
+        public const string CommandSceneInspect = "scene-inspect";
+        public const string CommandScenePatch = "scene-patch";
+        public const string CommandSceneSetTransform = "scene-set-transform";
+        public const string CommandSceneAssignMaterial = "scene-assign-material";
+        public const string CommandSceneListComponents = "scene-list-components";
+        public const string CommandPrefabInspect = "prefab-inspect";
+        public const string CommandPrefabCreate = "prefab-create";
+        public const string CommandPrefabPatch = "prefab-patch";
+        public const string CommandPrefabListComponents = "prefab-list-components";
+        public const string CommandQaClick = "qa-click";
+        public const string CommandQaTap = "qa-tap";
+        public const string CommandQaSwipe = "qa-swipe";
+        public const string CommandQaKey = "qa-key";
+        public const string CommandQaUiDump = "qa-ui-dump";
+        public const string CommandQaWaitUntil = "qa-wait-until";
+        public const string CommandQaWorldDump = "qa-world-dump";
+        public const string CommandQaRunSequence = "qa-run-sequence";
+        public const int DefaultQaWaitUntilTimeoutMs = 10_000;
+        public const int DefaultQaSwipeDurationMs = 300;
+        public const int DefaultQaRunSequenceTimeoutMs = 60_000;
+        public const int MaxQaRunSequenceTimeoutMs = 600_000;
+        public const int DefaultQaRunSequenceStepTimeoutMs = 5_000;
+        public const float DefaultQaNearEpsilon = 0.01f;
+        public const int TestPlayModeEntryTimeoutSeconds = 15;
+        public const string TestSessionKeyActiveRunId = "UCB.Test.activeRunId";
+        public const string TestSessionKeyActiveMode = "UCB.Test.activeMode";
+        public const string TestSessionKeyActiveStartedAt = "UCB.Test.activeStartedAt";
+        public const string TestSessionKeyActiveTimeoutSeconds = "UCB.Test.activeTimeoutSeconds";
+        public const string TestSessionKeyActiveRunGuid = "UCB.Test.activeRunGuid";
+        public const string TestSessionKeyActiveNoDomainReload = "UCB.Test.activeNoDomainReload";
+        public const string TestSessionKeyActiveFailuresOnly = "UCB.Test.activeFailuresOnly";
+        public const string TestSessionKeyProgressCompleted = "UCB.Test.progress.completed";
+        public const string TestSessionKeyProgressTotal = "UCB.Test.progress.total";
+        public const string TestSessionKeyInlineResultRunId = "UCB.Test.inlineResult.runId";
+        public const string TestSessionKeyInlineResultJson = "UCB.Test.inlineResult.json";
+        public const string TestSessionKeyScopeActive = "UCB.Test.scope.active";
+        public const string TestSessionKeyScopeWasEnabled = "UCB.Test.scope.wasEnabled";
+        public const string TestSessionKeyScopePreviousFlags = "UCB.Test.scope.previousFlags";
+        public const string TestSessionKeyCallbacksInstanceId = "UCB.Test.callbacks.instanceId";
+        public const string TestRunsDirectoryRelative = "Library/com.yhc509.unity-cli-bridge/test-runs";
+        public const string TestLastRunFileRelative = "Library/com.yhc509.unity-cli-bridge/last-run.json";
+        public const string TestRunInterruptedMessage = "EditMode run interrupted by domain reload — no result available";
+        public const string RecordingsDirectoryRelative = "Library/com.yhc509.unity-cli-bridge/recordings";
+        public const int DefaultRecordFps = 30;
+        public const int MaxRecordDurationSeconds = 600;
+        public const string RecordSessionKeyActiveId = "UCB.Record.activeId";
+        public const string RecordSessionKeyTargetPath = "UCB.Record.targetPath";
+        public const string RecordSessionKeyStartedAt = "UCB.Record.startedAt";
+        public const string RecordSessionKeyDurationSeconds = "UCB.Record.durationSeconds";
+        public static readonly string[] SupportedScenePrimitiveNames =
+        {
+            "Cube",
+            "Sphere",
+            "Capsule",
+            "Cylinder",
+            "Plane",
+            "Quad",
+        };
+
+        public static string NormalizeScenePrimitive(string? value)
+        {
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                return string.Empty;
+            }
+
+            switch (value.Trim().ToLowerInvariant())
+            {
+                case "cube":
+                    return "Cube";
+                case "sphere":
+                    return "Sphere";
+                case "capsule":
+                    return "Capsule";
+                case "cylinder":
+                    return "Cylinder";
+                case "plane":
+                    return "Plane";
+                case "quad":
+                    return "Quad";
+                default:
+                    return string.Empty;
+            }
+        }
+
+        public static bool IsPackageRequestTimedOut(TimeSpan elapsed, int timeoutSeconds = DefaultPackageRequestTimeoutSeconds)
+        {
+            if (timeoutSeconds <= 0)
+            {
+                return true;
+            }
+
+            return elapsed.TotalSeconds >= timeoutSeconds;
+        }
+
+        public static string BuildPackageRequestTimeoutMessage(int timeoutSeconds)
+        {
+            return $"패키지 명령이 {timeoutSeconds}초 안에 완료되지 않았습니다. Editor의 Package Manager 상태를 확인해 주세요.";
+        }
+
+        public static string ComputeProjectHash(string projectRoot)
+        {
+            var normalized = GetCanonicalPath(projectRoot)
+                .TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar)
+                .Replace('\\', '/')
+                .ToLowerInvariant();
+
+            using (var sha = SHA256.Create())
+            {
+                byte[] bytes = sha.ComputeHash(Encoding.UTF8.GetBytes(normalized));
+                var builder = new StringBuilder(bytes.Length * 2);
+                for (int index = 0; index < bytes.Length; index++)
+                {
+                    builder.Append(bytes[index].ToString("x2"));
+                }
+
+                return builder.ToString().Substring(0, 12);
+            }
+        }
+
+        public static string GetCanonicalPath(string path)
+        {
+            var fullPath = Path.GetFullPath(path);
+            var realPath = TryResolveRealPath(fullPath);
+            return (string.IsNullOrWhiteSpace(realPath) ? fullPath : realPath)
+                .TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar);
+        }
+
+        public static string BuildPipeName(string projectHash)
+        {
+            if (Path.DirectorySeparatorChar == '\\')
+            {
+                return $"unity-cli-{projectHash}";
+            }
+
+            return Path.Combine(Path.GetTempPath(), $"unity-cli-{projectHash}.sock");
+        }
+
+        private static string? TryResolveRealPath(string fullPath)
+        {
+            if (string.IsNullOrWhiteSpace(fullPath))
+            {
+                return null;
+            }
+
+            if (Path.DirectorySeparatorChar == '\\')
+            {
+                return null;
+            }
+
+            if (!Directory.Exists(fullPath) && !File.Exists(fullPath))
+            {
+                return null;
+            }
+
+            IntPtr resolvedPointer = RealPath(fullPath, IntPtr.Zero);
+            if (resolvedPointer == IntPtr.Zero)
+            {
+                return null;
+            }
+
+            try
+            {
+                return Marshal.PtrToStringAnsi(resolvedPointer);
+            }
+            finally
+            {
+                Free(resolvedPointer);
+            }
+        }
+
+        [DllImport("libc", EntryPoint = "realpath", SetLastError = true)]
+        private static extern IntPtr RealPath(string path, IntPtr buffer);
+
+        [DllImport("libc", EntryPoint = "free")]
+        private static extern void Free(IntPtr pointer);
+    }
+}
